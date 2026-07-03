@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف - يارا ويوسف 💍</title>
+    
+    <!-- استدعاء مكتبة Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- استدعاء الخطوط الراقية -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=El+Messiri:wght@400;600&family=Cinzel:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 
+         * ==========================================
+         * إعدادات الخطوط
+         * ==========================================
+         */
+        .font-amiri { font-family: 'Amiri', serif; }
+        .font-messiri { font-family: 'El Messiri', sans-serif; }
+        .font-ruqaa { font-family: 'Aref Ruqaa', serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.25em; }
+        .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-vibes { font-family: 'Great Vibes', cursive; }
+
+        /* 
+         * ==========================================
+         * الألوان الأساسية الجديدة (الخلفية بيج، الفوتر بني)
+         * ==========================================
+         */
+        :root {
+            --brown-dark: #3b2715;     /* بني غامق (للفوتر والنصوص الأساسية) */
+            --brown-mid: #5c4028;      /* بني متوسط للتفاصيل */
+            --beige-bg: #f8f1e4;       /* بيج فاتح (الخلفية الأساسية للموقع) */
+            --gold-accent: #c8a060;    /* دهبي أساسي للتطعيمات */
+            --gold-light: #e8c880;     /* دهبي فاتح للمؤثرات */
+        }
+
+        body {
+            background-color: var(--beige-bg);
+            color: var(--brown-dark);
+            margin: 0;
+            font-family: 'El Messiri', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 
+         * ==========================================
+         * تأثيرات وتنسيقات عامة
+         * ==========================================
+         */
+        .text-gold { color: var(--gold-accent); }
+        .bg-beige { background-color: var(--beige-bg); }
+        .border-gold-fade { border-color: rgba(200, 160, 96, 0.4); }
+
+        /* حاوية الصفحات وتأثير التقليب */
+        .page-container {
+            perspective: 2500px;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .page {
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .page-front {
+            z-index: 20;
+            transform-origin: center top;
+            transition: transform 1.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.4s ease-in-out;
+        }
+        .page-back {
+            z-index: 10;
+            opacity: 0;
+            overflow-y: auto;
+            transform: scale(1);
+            transition: opacity 1s ease 0.5s;
+        }
+        .turn-page .page-front {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .turn-page .page-back {
+            opacity: 1;
+            z-index: 30;
+        }
+
+        /* تأثير الزجاج الفاخر المضيء باللون البيج للسكشن الأول */
+        .glass-premium {
+            background: rgba(248, 241, 224, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(200, 160, 96, 0.5);
+            box-shadow: 0 25px 60px rgba(59, 39, 21, 0.15);
+            border-radius: 30px;
+        }
+
+        /* إطار مزدوج فاخر */
+        .luxury-double-border {
+            position: relative;
+        }
+        .luxury-double-border::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(200, 160, 96, 0.5);
+            pointer-events: none;
+            border-radius: 24px;
+        }
+
+        /* إخفاء سهم القوائم المنسدلة */
+        details > summary { list-style: none; outline: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="mainContainer" class="page-container">
+        
+        <!-- 
+        =========================================================
+        الصفحة الأولى: الغلاف الخارجي
+        ========================================================= 
+        -->
+        <div id="coverPage" class="page page-front flex flex-col items-center justify-center text-center p-6 relative overflow-hidden" dir="ltr">
+             
+            <!-- تم إضافة فيديو خلفية بدلاً من صورة الخلفية -->
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="dd.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            
+            <!-- طبقة تظليل خفيفة فوق الفيديو للغلاف الخارجي -->
+            <div class="absolute inset-0 bg-black/20 z-10"></div>
+
+            <div class="relative z-20 mt-[-5vh] flex flex-col items-center">
+                <h2 class="font-cinzel text-[#f8f1e4] text-sm sm:text-base uppercase mb-1 tracking-[0.5em] opacity-90 drop-shadow-md">
+                    Wedding Invitation
+                </h2>
+                
+                <!-- صورة الظرف (white.jpg) -->
+                <div class="w-[80%] sm:w-80 md:w-[360px] relative group cursor-pointer transition-all duration-700 hover:scale-[1.02] mx-auto my-10" onclick="openInvitation()">
+                    <img src="white.jpg" alt="Envelope" class="w-full h-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.5)]">
+                </div>
+                
+                <p class="font-ruqaa text-[#f8f1e4] text-xl sm:text-2xl mt-2 tracking-wide animate-pulse drop-shadow-md">
+                    اضغط لفتح الدعوة
+                </p>
+            </div>
+        </div>
+
+        <!-- 
+        =========================================================
+        الصفحة الثانية: محتوى الدعوة من الداخل (الخلفية بيج)
+        ========================================================= 
+        -->
+        <div id="detailsPage" class="page page-back w-full h-full overflow-x-hidden" style="background-color: var(--beige-bg);">
+            
+            <!-- 
+            ************************************************
+            1. السكشن الأول (الهيرو) 
+            ************************************************
+            -->
+            <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] text-center min-h-screen flex items-center justify-center overflow-hidden py-20 px-4"
+                 style="background-image: url('ggg.jpg'); background-size: cover; background-position: center;">
+                
+                <!-- طبقة تظليل ناعمة فوق الصورة لتوحيد الألوان وضمان وضوح نصوص الأسماء والآية -->
+                <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(248,241,228,0.5), rgba(248,241,228,0.85));"></div>
+
+                <!-- البوكس الزجاجي البيج المحتوي على الآية والأسماء -->
+                <div class="relative z-10 mx-auto p-8 sm:p-14 glass-premium luxury-double-border max-w-[540px] w-full">
+                    
+                    <!-- زخرفة علوية دهبية -->
+                    <div class="text-gold opacity-90 text-xl mb-6 font-cinzel">✦ ♡ ✦</div>
+                    
+                    <!-- الآية القرآنية -->
+                    <div class="font-amiri text-xl sm:text-2xl text-[#3b2715] font-medium mb-4 leading-loose tracking-wide max-w-md mx-auto drop-shadow-sm">
+                        بَارَكَ اللَّهُ لَكُمَا، وَبَارَكَ عَلَيْكُمَا، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                    </div>
+                    
+                    <!-- فاصل مزخرف دهبي -->
+                    <div class="flex items-center justify-center gap-3 mx-auto mb-10">
+                        <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-gold-accent"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-gold-accent transform rotate-45"></div>
+                        <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-gold-accent"></div>
+                    </div>
+                    
+                    <!-- أسماء العرسان باللون البني الغامق -->
+                    <div class="mb-10">
+                        <h1 class="font-ruqaa text-6xl sm:text-7xl text-[#3b2715] tracking-wide filter drop-shadow-sm">
+                         يوسف
+                        </h1>
+                        <div class="font-vibes text-gold text-4xl my-3 transform -rotate-6 select-none">
+                            &
+                        </div>
+                        <h1 class="font-ruqaa text-6xl sm:text-7xl text-[#3b2715] tracking-wide filter drop-shadow-sm">
+                         يمنى
+                        </h1>
+                    </div>
+                    
+                    <!-- فاصل سفلي -->
+                    <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-gold-accent to-transparent mx-auto mb-8"></div>
+
+                    <!-- تاريخ الزفاف دهبي -->
+                    <p class="font-cinzel text-gold text-xs sm:text-base tracking-[0.3em] font-bold uppercase">
+                        July 18th, 2026
+                    </p>
+                </div>
+            </div>
+
+            <!-- حاوية باقي السكاشن لتوسيط المحتوى فوق الخلفية البيج -->
+            <div class="max-w-4xl mx-auto px-6 sm:px-8">
+                
+                <!-- 
+                ************************************************
+                2. سكشن العد التنازلي
+                ************************************************
+                -->
+                <div class="text-center mb-32 pt-16">
+                    <h2 class="font-ruqaa text-4xl mb-4 text-gold tracking-wide font-bold">
+                        العد التنازلي
+                    </h2>
+                    <p class="font-messiri text-[#3b2715]/70 text-sm max-w-sm mx-auto mb-12 leading-relaxed">
+                        بانتظار اللحظة السعيدة التي يجمعنا بها القدر بكل حب...
+                    </p>
+                    
+                    <div class="flex justify-center gap-4 sm:gap-6" dir="ltr">
+                        <!-- الأيام -->
+                        <div class="border border-gold-fade rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col items-center justify-center bg-white/60 backdrop-blur-md shadow-lg">
+                            <span id="days" class="text-3xl sm:text-5xl font-light font-cormorant text-[#3b2715]">00</span>
+                            <span class="text-[11px] tracking-widest text-gold font-messiri font-bold mt-3">يوم</span>
+                        </div>
+                        <!-- الساعات -->
+                        <div class="border border-gold-fade rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col items-center justify-center bg-white/60 backdrop-blur-md shadow-lg">
+                            <span id="hours" class="text-3xl sm:text-5xl font-light font-cormorant text-[#3b2715]">00</span>
+                            <span class="text-[11px] tracking-widest text-gold font-messiri font-bold mt-3">ساعة</span>
+                        </div>
+                        <!-- الدقائق -->
+                        <div class="border border-gold-fade rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col items-center justify-center bg-white/60 backdrop-blur-md shadow-lg">
+                            <span id="minutes" class="text-3xl sm:text-5xl font-light font-cormorant text-[#3b2715]">00</span>
+                            <span class="text-[11px] tracking-widest text-gold font-messiri font-bold mt-3">دقيقة</span>
+                        </div>
+                        <!-- الثواني -->
+                        <div class="border border-gold-fade rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col items-center justify-center bg-white/60 backdrop-blur-md shadow-lg">
+                            <span id="seconds" class="text-3xl sm:text-5xl font-light font-cormorant text-gold animate-pulse">00</span>
+                            <span class="text-[11px] tracking-widest text-gold font-messiri font-bold mt-3">ثانية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                ************************************************
+                3. تفاصيل اليوم والموقع
+                ************************************************
+                -->
+                <div class="text-center mb-32">
+                    <h2 class="font-ruqaa text-4xl mb-4 text-gold tracking-wide font-bold">
+                        تفاصيل الاحتفال
+                    </h2>
+                    <p class="font-messiri text-[#3b2715]/70 text-sm mb-12">
+                        كل ما تحتاج لمعرفته لمشاركتنا فرحتنا
+                    </p>
+                    
+                    <div class="bg-white/50 rounded-3xl border border-gold-fade p-6 sm:p-10 mx-auto shadow-xl relative max-w-[680px]">
+                        
+                        <!-- صورة القاعة -->
+                        <div class="overflow-hidden rounded-2xl mb-10 border border-gold-fade relative shadow-sm">
+                            <img src="photo.jpg" alt="قاعة الزفاف" class="w-full h-72 sm:h-80 object-cover">
+                        </div>
+                        
+                        <!-- عنوان القاعة باللون البني -->
+                        <h3 class="font-messiri text-[#3b2715] text-3xl font-semibold mb-8 tracking-wide">
+                            قاعة القوات المسلحة
+                        </h3>
+                     
+                        <!-- تفاصيل الموعد والمكان -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right border-t border-[#3b2715]/10 pt-8">
+                            
+                            <!-- العنوان -->
+                            <div class="flex items-start gap-4 p-3 bg-[#c8a060]/10 rounded-xl border border-gold/10">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold flex-shrink-0 bg-white shadow-sm">
+                                    📍
+                                </div>
+                                <div>
+                                    <h4 class="text-gold font-bold text-sm mb-1">العنوان</h4>
+                                    <p class="text-[#3b2715] text-sm leading-relaxed font-medium">بالنزهة- مصر الجديدة</p>
+                                </div>
+                            </div>
+
+                            <!-- التاريخ -->
+                            <div class="flex items-start gap-4 p-3 bg-[#c8a060]/10 rounded-xl border border-gold/10">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold flex-shrink-0 bg-white shadow-sm">
+                                    🗓️
+                                </div>
+                                <div>
+                                    <h4 class="text-gold font-bold text-sm mb-1">التاريخ</h4>
+                                    <p class="text-[#3b2715] text-sm leading-relaxed font-medium">السبت، 18 يوليو 2026</p>
+                                </div>
+                            </div>
+
+                            <!-- الوقت -->
+                            <div class="flex items-start gap-4 p-3 bg-[#c8a060]/10 rounded-xl border border-gold/10">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold flex-shrink-0 bg-white shadow-sm">
+                                    ⏰
+                                </div>
+                                <div>
+                                    <h4 class="text-gold font-bold text-sm mb-1">الوقت</h4>
+                                    <p class="text-[#3b2715] text-sm leading-relaxed font-medium">الساعة 9:00 مساءً</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                ************************************************
+                4. الخريطة التفاعلية
+                ************************************************
+                -->
+                <div class="text-center mb-32">
+                    <h2 class="font-ruqaa text-4xl mb-4 text-gold tracking-wide font-bold">
+                       اللوكيشن
+                    </h2>
+                    <p class="font-messiri text-[#3b2715]/70 text-sm mb-12">
+                        لتسهيل وصولكم المباشر لقاعة الحفل
+                    </p>
+
+                    <div class="bg-white/50 p-5 rounded-3xl border border-gold-fade shadow-xl mx-auto max-w-[680px]">
+                        
+                        <!-- إطار الخريطة -->
+                        <div class="h-72 w-full rounded-2xl overflow-hidden mb-6 border border-gold-fade relative">
+                            <iframe
+                                src="https://www.google.com/maps?q=قاعة+الهضبه+بدكرنس&output=embed"
+                                class="w-full h-full border-0 contrast-105 brightness-95"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                        <!-- زر فتح الخريطة مخصص ليناسب الديزاين البيج والدهبي -->
+                        <a href="https://maps.app.goo.gl/sbQTFJksDh9Xq2BZ7?g_st=ic" 
+                           target="_blank" 
+                           class="block w-full bg-[#3b2715] text-[#f8f1e4] font-medium py-3.5 rounded-xl transition-all duration-300 hover:bg-gold hover:text-[#3b2715] flex justify-center items-center gap-2 text-sm tracking-wide shadow-md">
+                            🗺️ فتح عبر تطبيق الخرائط
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 
+                ************************************************
+                5. برنامج الحفل
+                ************************************************
+                -->
+                <div class="text-center mb-36">
+                    <h2 class="font-ruqaa text-4xl mb-4 text-gold tracking-wide font-bold">
+                        برنامج الحفل
+                    </h2>
+                    <p class="font-messiri text-[#3b2715]/70 text-sm mb-16">
+                        يسعدنا أن تشاركونا كل لحظة من يومنا
+                    </p>
+                    
+                    <div class="relative mx-auto text-right max-w-[580px] px-2">
+                        <!-- الخط الرأسي الدهبي الممتد -->
+                        <div class="absolute right-6 top-3 bottom-3 w-[2px] bg-gradient-to-b from-gold via-gold/50 to-transparent"></div>
+                        
+                        <!-- الحدث الأول -->
+                        <div class="relative flex items-start mb-16">
+                            <div class="absolute right-[20px] top-1.5 w-3 h-3 rounded-full bg-gold shadow-[0_0_10px_#c8a060] z-10"></div>
+                            <div class="pr-16 w-full">
+                                <span class="font-cormorant text-sm tracking-widest text-[#3b2715] font-bold bg-white border border-gold-fade px-3 py-1 rounded-md shadow-sm">
+                                    9:00 PM
+                                </span>
+                                <h3 class="font-ruqaa text-3xl text-[#3b2715] mt-4 mb-2">بداية المراسم والاستقبال</h3>
+                                <p class="font-messiri text-[#3b2715]/70 text-base leading-relaxed">
+                                    نفتح الأبواب ترحيباً بقلوبكم الدافئة لمشاركتنا أولى لحظات الفرح.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- الحدث الثاني -->
+                        <div class="relative flex items-start">
+                            <div class="absolute right-[20px] top-1.5 w-3 h-3 rounded-full bg-gold shadow-[0_0_10px_#c8a060] z-10"></div>
+                            <div class="pr-16 w-full">
+                                <span class="font-cormorant text-sm tracking-widest text-[#3b2715] font-bold bg-white border border-gold-fade px-3 py-1 rounded-md shadow-sm">
+                                    2:00 AM
+                                </span>
+                                <h3 class="font-ruqaa text-3xl text-[#3b2715] mt-4 mb-2"  >ختام الحفل </h3>
+                                <p class="font-messiri text-[#3b2715]/70 text-base leading-relaxed">
+                                    نودعكم بكامل المودة على أمل أن تظل ذكريات ليلتنا منقوشة بقلوبكم.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                ************************************************
+                6. أسئلة شائعة (Good to Know)
+                ************************************************
+                -->
+                <div class="mb-32 mx-auto max-w-[680px]">
+                    <h2 class="font-cinzel text-2xl mb-2 text-center text-gold tracking-[0.3em] font-bold">
+                        Good to Know
+                    </h2>
+                    <p class="font-messiri text-[#3b2715]/60 text-sm text-center mb-12">
+                        تفاصيل تهمك لمعرفتها عن أجواء زفافنا
+                    </p>
+                    
+                    <div class="space-y-6">
+                        
+                        <!-- السؤال الأول -->
+                        <details class="bg-white/50 border border-gold-fade rounded-2xl p-6 cursor-pointer shadow-sm">
+                            <summary class="flex justify-between items-center select-none">
+                                <div class="text-right flex-1 pr-1">
+                                    <p class="font-playfair text-lg text-[#3b2715] tracking-wide italic font-bold" dir="ltr">What is the dress code?</p>
+                                    <p class="font-messiri text-gold text-sm mt-1 font-bold">ما هو الزي المناسب للحضور؟</p>
+                                </div>
+                                <span class="text-gold text-sm ml-2">▼</span>
+                            </summary>
+                            <div class="border-t border-gold/20 pt-5 mt-5">
+                                <p class="font-messiri text-[#3b2715]/80 text-sm leading-relaxed">
+                                    ارتدِ ما يمنحك التميز والأناقة الكاملة، فاليوم صُمم بالكامل لتبادل البهجة رفقتكم!
+                                </p>
+                            </div>
+                        </details>
+                        
+                        <!-- السؤال الثاني -->
+                        <details class="bg-white/50 border border-gold-fade rounded-2xl p-6 cursor-pointer shadow-sm">
+                            <summary class="flex justify-between items-center select-none">
+                                <div class="text-right flex-1 pr-1">
+                                    <p class="font-playfair text-lg text-[#3b2715] tracking-wide italic font-bold" dir="ltr">Is there a theme for the wedding?</p>
+                                    <p class="font-messiri text-gold text-sm mt-1 font-bold">هل هناك طابع محدد للزفاف؟</p>
+                                </div>
+                                <span class="text-gold text-sm ml-2">▼</span>
+                            </summary>
+                            <div class="border-t border-gold/20 pt-5 mt-5">
+                                <p class="font-messiri text-[#3b2715]/80 text-sm leading-relaxed">
+                                    نعم، يكتسي الحفل بالكامل طابعًا مسائيًا كلاسيكيًا فاخرًا.
+                                </p>
+                            </div>
+                        </details>
+
+                        <!-- السؤال الثالث -->
+                        <details class="bg-white/50 border border-gold-fade rounded-2xl p-6 cursor-pointer shadow-sm">
+                            <summary class="flex justify-between items-center select-none">
+                                <div class="text-right flex-1 pr-1">
+                                    <p class="font-playfair text-lg text-[#3b2715] tracking-wide italic font-bold" dir="ltr">Can I take photos?</p>
+                                    <p class="font-messiri text-gold text-sm mt-1 font-bold">هل يمكنني التقاط الصور التذكارية؟</p>
+                                </div>
+                                <span class="text-gold text-sm ml-2">▼</span>
+                            </summary>
+                            <div class="border-t border-gold/20 pt-5 mt-5">
+                                <p class="font-messiri text-[#3b2715]/80 text-sm leading-relaxed">
+                                    نرجو منكم عيش اللحظة أثناء المراسم الأساسية، ونرحب بكل الصور خلال بقية السهرة!
+                                </p>
+                            </div>
+                        </details>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 
+            ************************************************
+            7. الفوتر (الختام) - أصبح باللون البني الغامق الفخم
+            ************************************************
+            -->
+            <div class="bg-[#3b2715] text-center py-12 px-6 rounded-t-[50px] shadow-[0_-15px_40px_rgba(0,0,0,0.2)] flex flex-col items-center">
+                
+                <!-- زر الرجوع للأعلى بلون فاتح مناسب للفوتر البني -->
+                <button onclick="scrollToTop()" class="font-messiri text-xs font-bold text-[#f8f1e4]/60 mb-8 flex flex-col items-center hover:text-gold tracking-widest">
+                    <span class="mb-2 text-lg">▲</span>
+                    للأعلى
+                </button>
+                
+                <!-- لوجو الأسماء بالبيج والدهبي للتباين الفخم -->
+                <div class="flex items-center gap-5 mb-5">
+                    <span class="font-playfair text-4xl font-bold text-[#f8f1e4] tracking-widest">Y</span>
+                    <span class="font-vibes text-3xl text-[#c8a060]">&amp;</span>
+                    <span class="font-playfair text-4xl font-bold text-[#f8f1e4] tracking-widest">Y</span>
+                </div>
+                
+                <div class="h-[1px] w-24 bg-[#c8a060] mb-5"></div>
+                
+                <p class="font-cormorant text-[#f8f1e4] text-[12px] tracking-[0.4em] uppercase font-bold">
+                    Made with love for July 18th, 2026
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 
+    =========================================================
+    أكواد الجافاسكريبت (التقليب، الرجوع للأعلى، العد التنازلي)
+    ========================================================= 
+    -->
+    <script>
+        // دالة فتح الظرف
+        function openInvitation() {
+            const container = document.getElementById('mainContainer');
+            container.classList.add('turn-page');
+            
+            // إخفاء الغلاف بعد انتهاء الأنيميشن
+            setTimeout(() => { 
+                document.getElementById('coverPage').style.display = 'none'; 
+            }, 1600);
+        }
+
+        // دالة الرجوع للأعلى
+        function scrollToTop() { 
+            document.getElementById('detailsPage').scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
+        
+        // إعداد العد التنازلي (يوم 18 يوليو 2026 الساعة 9 مساءً)
+        const weddingDate = new Date("July 18, 2026 21:00:00").getTime();
+        
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            if (distance < 0) return;
+            
+            // حساب الأيام والساعات والدقائق والثواني
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // عرض الأرقام مع إضافة صفر على الشمال لو الرقم أقل من 10
+            document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+            document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
